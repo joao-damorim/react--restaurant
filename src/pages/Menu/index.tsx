@@ -9,6 +9,7 @@ function Menu() {
 
     const [search, setSearch] = useState("")
     const [filter, setFilter] = useState<number | null>(null)
+    const [computer, setComputer] = useState("")
 
     return (
         <main>
@@ -25,7 +26,7 @@ function Menu() {
                     <Search search={search} setSearch={setSearch}/>
                 <div className={styles.menu__filters}>
                     <Filters filter={filter} setFilter={setFilter}/>  
-                    <Computer /> 
+                    <Computer computer={computer} setComputer={setComputer}/> 
                 </div>
             </section>
         </main>
