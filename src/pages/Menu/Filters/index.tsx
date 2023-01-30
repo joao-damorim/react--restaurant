@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import filters from './filters.json'
 import styles from './Filters.module.scss'
 
@@ -17,7 +18,12 @@ function Filters({ filter, setFilter}: Props) {
         <div className={styles.filters}>
             {filters.map((option) => (
                 <button 
-                    className={`${styles.filters__filter} ${filter === option.id ? styles["filters__filter--active"] : ""}`}
+                    className={
+                        classNames({
+                            [styles.filters__filter]: true,
+                            [styles['filters__filter--active']] : filter === option.id
+                        })
+                    }
                     key={option.id} 
                     onClick={() => selectFilter(option)}>
                         {option.label}
