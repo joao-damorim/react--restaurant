@@ -6,7 +6,10 @@ function Items() {
     return (
         <div className={styles.items}>
             {menu.map((item) => (
-                <Item key={item.id} />
+                <Item 
+                    key={item.id}
+                    {...item}
+                />
             ))}
         </div>
     )
